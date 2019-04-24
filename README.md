@@ -1,2 +1,2 @@
-# arduino_projects
-Personnal Arduino projects
+# Personnal Arduino projects. 
+It is necessary to have: "Arduino Starter Kit"
