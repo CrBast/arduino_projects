@@ -14,16 +14,28 @@ void setup()
   pinMode(LED_G, OUTPUT);
   pinMode(LED_B, OUTPUT);
 
-  int colors[] = {LED_R, LED_G};
-  setColor(colors);
+  int colors[] = {LED_R, LED_G, LED_B};
+  setColor(colors, 3);
 }
 
-void loop(){}
+void loop(){
+  delay(2000);
+  int colors[] = {LED_R, LED_G, LED_B};
+  setColor(colors, 3);
+  delay(2000);
+  int colors2[] = {LED_R};
+  setColor(colors2, 1);
+  delay(2000);
+  int colors3[] = {LED_G};
+  setColor(colors3, 1);
+  delay(2000);
+  int colors4[] = {LED_B};
+  setColor(colors4, 1);
+}
 
-void setColor(int colors[]){
-  PORTD = 0;
-  int size = sizeof(*colors);
-  for(int id = 0; id <= size; id++){
+void setColor(int colors[], int arraySize){
+  PORTB = 0b000000; // PORTS 8 to 13 on LOW
+  for(int id = 0; id < arraySize; id++){
     digitalWrite(colors[id], HIGH);  
     Serial.println((String)colors[id] + " : " + digitalRead(colors[id])); //DEBUG
   }
