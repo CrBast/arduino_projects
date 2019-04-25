@@ -13,13 +13,9 @@ void setup()
   pinMode(LED_R, OUTPUT);
   pinMode(LED_G, OUTPUT);
   pinMode(LED_B, OUTPUT);
-
-  int colors[] = {LED_R, LED_G, LED_B};
-  setColor(colors, 3);
 }
 
 void loop(){
-  delay(2000);
   int colors[] = {LED_R, LED_G, LED_B};
   setColor(colors, 3);
   delay(2000);
@@ -31,6 +27,7 @@ void loop(){
   delay(2000);
   int colors4[] = {LED_B};
   setColor(colors4, 1);
+  delay(2000);
 }
 
 void setColor(int colors[], int arraySize){
