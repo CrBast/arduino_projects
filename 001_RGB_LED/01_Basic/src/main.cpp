@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 /**
  * Basic use of the RGB LED
  */
@@ -15,7 +17,8 @@ void setup()
   pinMode(LED_B, OUTPUT);
 }
 
-void loop(){
+void loop()
+{
   int colors[] = {LED_R, LED_G, LED_B};
   setColor(colors, 3);
   delay(2000);
@@ -30,11 +33,12 @@ void loop(){
   delay(2000);
 }
 
-void setColor(int colors[], int arraySize){
+void setColor(int colors[], int arraySize)
+{
   PORTB = 0b000000; // PORTS 8 to 13 on LOW
-  for(int id = 0; id < arraySize; id++){
-    digitalWrite(colors[id], HIGH);  
+  for (int id = 0; id < arraySize; id++)
+  {
+    digitalWrite(colors[id], HIGH);
     Serial.println((String)colors[id] + " : " + digitalRead(colors[id])); //DEBUG
   }
 }
-
